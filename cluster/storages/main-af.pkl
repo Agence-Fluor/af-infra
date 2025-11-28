@@ -1,7 +1,7 @@
 amends "@k8s/api/core/v1/PersistentVolume.pkl"
 
 metadata {
-  name = "main-pv"
+  name = "main-af"
 }
 spec {
   storageClassName = ""
@@ -12,7 +12,7 @@ spec {
     "ReadWriteOnce"
   }
   hostPath {
-    path = "/storage"
+    path = "/storage/af"
   }
   persistentVolumeReclaimPolicy = "Retain"
 }

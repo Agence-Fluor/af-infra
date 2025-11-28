@@ -1,0 +1,26 @@
+amends "./templates/Settings.pkl"
+
+cluster {
+    engine = "k3s"
+    name = "af"
+}
+
+ingress  {
+    domain = "localhost"
+    tls  {
+        enabled = true
+        selfSigned = true
+    }
+    ports {
+        ["http"] = 80
+        ["https"] = 443
+    }
+}
+
+
+releases {
+    ["af-website-frontend"] {
+        tag = "latest"
+        allowPrerelease = true
+    }
+}

@@ -7,7 +7,7 @@ resources {
 
     "storages/main-pv.yaml"
     
-    "demo"
+    "af"
 
-    "pro"
+    "gitlab"
 }

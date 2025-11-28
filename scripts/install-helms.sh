@@ -16,18 +16,6 @@ helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
   --version 4.10.1 \
   --set controller.allowSnippetAnnotations=true
   
-#==========================================
-# SETUP NEXTCLOUD
-# =========================================
-
-$SCRIPT_DIR/../pkl eval $SCRIPT_DIR/../cluster/demo/helms/nextcloud.pkl -o $SCRIPT_DIR/../storage/tmp/pkl-output/demo/helms/nextcloud.yaml -f yaml
-helm repo add nextcloud https://nextcloud.github.io/helm/
-helm repo update
-#helm upgrade --install nextcloud nextcloud/nextcloud \
-#  -f $SCRIPT_DIR/../storage/tmp/pkl-output/demo/helms/nextcloud.yaml \
-#  --namespace demo \
-#  --create-namespace
-
 
 #==========================================
 # SETUP CERT-MANAGER

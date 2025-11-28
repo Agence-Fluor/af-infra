@@ -6,7 +6,7 @@ metadata {
 }
 spec {
     acme {
-        email = "contact@somecompany.com"
+        email = "contact@agence-fluor.fr"
 
         server = "https://acme-v02.api.letsencrypt.org/directory" 
 

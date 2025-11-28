@@ -13,7 +13,7 @@ REPO_KEYS=$(echo "$SETTINGS" | jq -r '.releases | keys | .[]')
 for REPO_KEY in $REPO_KEYS; do
   TAG=$(echo "$SETTINGS" | jq -r ".releases.\"$REPO_KEY\".tag")
   ALLOW_PRERELEASE=$(echo "$SETTINGS" | jq -r ".releases.\"$REPO_KEY\".allowPrerelease")
-  REPO="somecompany-team/$REPO_KEY"
+  REPO="AgenceFluor/$REPO_KEY"
   echo "📦 Processing $REPO_KEY ($REPO)..."
   
   # Fetch release data

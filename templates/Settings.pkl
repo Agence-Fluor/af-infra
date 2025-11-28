@@ -18,19 +18,6 @@ local class Ingress {
 }
 ingresses: Mapping<String, Ingress>
 
-//////////////////////////////////////////////////////
-
-local open class DemoDB {
-  name: String
-}
-
-local open class Demo {
-  jwt_secret: String
-  environment: String
-  openai_api_key: String
-  db: DemoDB
-}
-demo: Demo
 
 //////////////////////////////////////////////////////
 

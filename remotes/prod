@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# ---- CONFIG ----
+export REMOTE="ubuntu@57.131.27.189"
+export REMOTE_PATH="/home/ubuntu/af-k8s"
+
+./remotes/tools/deploy.sh <(./remotes/tools/gen_excludes.sh) $REMOTE $REMOTE_PATH $*
