@@ -31,29 +31,29 @@ spec {
           }
           volumeMounts {
             new {
-              name      = "demo-storage"
+              name      = "af-storage"
               mountPath = "/etc/nginx/conf.d"
-              subPath   = "demo/nginx/config"
+              subPath   = "af/nginx/config"
 
             }
             new {
-              name      = "demo-storage"
+              name      = "af-storage"
               mountPath = "/var/log/nginx"
-              subPath   = "demo/nginx/logs"
+              subPath   = "af/nginx/logs"
             }
             new {
-              name      = "demo-storage"
+              name      = "af-storage"
               mountPath = "/usr/share/nginx/html"
-              subPath   = "demo/nginx/public"
+              subPath   = "af/nginx/public"
             }
           }
         }
       }
       volumes {
         new {
-          name = "demo-storage"
+          name = "af-storage"
           persistentVolumeClaim {
-            claimName = "main-pvc"
+            claimName = "af-pvc"
           }
         }      
       }

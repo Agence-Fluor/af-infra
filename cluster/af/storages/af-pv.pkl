@@ -1,7 +1,7 @@
 amends "@k8s/api/core/v1/PersistentVolume.pkl"
 
 metadata {
-  name = "main-af"
+  name = "af-pv"
 }
 spec {
   storageClassName = ""

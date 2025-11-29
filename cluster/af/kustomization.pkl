@@ -1,16 +1,13 @@
 amends "../../templates/kustomize.config.k8s.io/v1beta1/Kustomization.pkl"
 
-namespace = "demo"
+namespace = "af"
 
 resources {
     "namespace.yaml"
     "certificate.yaml"
-    "storages/main-pvc.yaml"
     "deployements/nginx.yaml"
-    "deployements/backend.yaml"
-    "deployements/mongo.yaml"
     "services/nginx-service.yaml"
-    "services/backend-service.yaml"
-    "services/mongo-service.yaml"
+    "storages/af-pvc.yaml"
+    "storages/af-pv.yaml"
     "ingress.yaml"
 }

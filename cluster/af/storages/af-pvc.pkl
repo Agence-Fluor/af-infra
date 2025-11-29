@@ -1,7 +1,7 @@
 amends "@k8s/api/core/v1/PersistentVolumeClaim.pkl"
 
 metadata {
-  name = "main-pvc"
+  name = "af-pvc"
 }
 spec {
   storageClassName = ""
@@ -13,5 +13,5 @@ spec {
       ["storage"] = 10.gib
     }
   }
-  volumeName = "main-pv"
+  volumeName = "af-pv"
 }

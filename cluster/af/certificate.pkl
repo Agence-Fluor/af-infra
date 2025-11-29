@@ -3,19 +3,19 @@ import "../../Settings.pkl" as Settings
 apiVersion = "cert-manager.io/v1"
 kind = "Certificate"
 metadata {
-  name = "demo-cert"
+  name = "af-cert"
   namespace = "default"
 }
 spec {
-  secretName = "demo-tls"
+  secretName = "af-tls"
   duration = "2160h"
   renewBefore = "360h"
-  commonName = Settings.ingresses["demo"].domain
+  commonName = Settings.ingress["af"].domain
   dnsNames {
-     Settings.ingresses["demo"].domain
+     Settings.ingress["af"].domain
   }
   issuerRef {
-    when (Settings.ingresses["demo"].tls.selfSigned)
+    when (Settings.ingress["af"].tls.selfSigned)
     {
         name = "selfsigned-issuer"
     }

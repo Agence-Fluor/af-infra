@@ -1,12 +1,10 @@
-# Binaries
-pkl
-
 # Github releases
-releases
+/releases
 
 # Temp files such as generated k8s yamls
-storage/tmp
+/storage/tmp
 
+# Static files
 /storage/af/nginx/html
 
 # Secrets/config

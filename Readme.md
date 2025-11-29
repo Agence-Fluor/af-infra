@@ -19,8 +19,8 @@ Debian/Ubuntu 64 bits
 
 ## Usage 
 
-- create a Settings.pkl at root using templates/Settings.demo.pkl 
-- same for storage/backend/config.yaml using storage/backend/config.demo.yaml 
+- create a Settings.pkl at root using templates/Settings.af.pkl 
+- same for storage/backend/config.yaml using storage/backend/config.af.yaml 
 - create network/cluster.fw and network/nodes.sh
 - update Settings.pkl according your github releases project
 
@@ -46,10 +46,10 @@ Run `scripts/deploy.sh` to create/update kubernetes cluster.
 
 - [ ] add a switch between k3d and k3s
 - [ ] makefile should be easier to use/understand
-- [ ] demo-pro-backend => change in the docker image. the app root to demo-pro-backend 
-- [ ] maybe rename all demo-pro occurences to pro 
+- [ ] af-pro-backend => change in the docker image. the app root to af-pro-backend 
+- [ ] maybe rename all af-pro occurences to pro 
 - [ ] pro/backend/.env => maybe we should add a PRO_ as prefix to avoid key colision or do differently like secretRef
-- [ ] delete main-pv and do a main-demo instead (like main-pro) for storage with demo as a prefix instead of root, updating paths in demo deployements
+- [ ] delete main-pv and do a main-af instead (like main-pro) for storage with af as a prefix instead of root, updating paths in af deployements
 
 ## Dev machine
 

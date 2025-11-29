@@ -11,12 +11,12 @@ local class TlsConfig {
   enabled: Boolean = true
   selfSigned: Boolean = true
 }
-local class Ingress {
+local class IngressEntry {
   domain: String
   tls: TlsConfig
   ports: Mapping<String, UInt16>
 }
-ingresses: Mapping<String, Ingress>
+ingress: Mapping<String, IngressEntry>
 
 
 //////////////////////////////////////////////////////

@@ -17,7 +17,7 @@ cmd="k3d cluster create $CLUSTER_NAME \
     --agents 0 \
     --volume $PROJECT_ROOT/storage:/storage \
     $PORTS \
-    --network k3d-demo \
+    --network k3d-af \
     --k3s-arg --disable=traefik@server:*
     " 
 echo $cmd

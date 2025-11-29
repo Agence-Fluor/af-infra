@@ -4,10 +4,5 @@ resources {
     "issuers/selfsigned.yaml"
     "issuers/letsencrypt.yaml"
     "ingress-class.yaml"
-
-    "storages/main-pv.yaml"
-    
     "af"
-
-    "gitlab"
 }

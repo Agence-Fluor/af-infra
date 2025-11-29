@@ -1,0 +1,1 @@
+echo "Skipping cluster-destroy for k3s, assuming one cluster per install."

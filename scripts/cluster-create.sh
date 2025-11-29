@@ -3,6 +3,18 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source $SCRIPT_DIR/settings.sh
+
+echo ======================================================
+echo "Installing cluster ${CLUSTER_NAME}..."
+$SCRIPT_DIR/kube-distros/${CLUSTER_ENGINE}/cluster-create.sh
+echo "Cluster created."
+echo "Waiting for cluster to be ready..."
+until kubectl get nodes >/dev/null 2>&1; do
+    sleep 2
+done
+echo "Cluster is ready."
+echo ======================================================
 
 #==========================================
 # SETUP NGINX INGRESS CONTROLLER
@@ -23,9 +35,8 @@ helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
 
 helm repo add jetstack https://charts.jetstack.io
 helm repo update
-
 helm upgrade --install cert-manager jetstack/cert-manager \
   --namespace cert-manager \
   --create-namespace \
   --version v1.15.0 \
-  --set installCRDs=true
+  --set crds.enabled=true
