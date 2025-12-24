@@ -1,0 +1,13 @@
+amends "../../templates/kustomize.config.k8s.io/v1beta1/Kustomization.pkl"
+
+namespace = "bl"
+
+resources {
+    "namespace.yaml"
+    "certificate.yaml"
+    "deployements/nginx.yaml"
+    "services/nginx-service.yaml"
+    "storages/bl-pvc.yaml"
+    "storages/bl-pv.yaml"
+    "ingress.yaml"
+}

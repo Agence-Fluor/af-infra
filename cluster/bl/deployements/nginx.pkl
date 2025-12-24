@@ -31,18 +31,18 @@ spec {
           }
           volumeMounts {
             new {
-              name      = "af-storage"
+              name      = "bl-storage"
               mountPath = "/etc/nginx/conf.d"
               subPath   = "nginx/config"
 
             }
             new {
-              name      = "af-storage"
+              name      = "bl-storage"
               mountPath = "/var/log/nginx"
               subPath   = "nginx/logs"
             }
             new {
-              name      = "af-storage"
+              name      = "bl-storage"
               mountPath = "/usr/share/nginx/html"
               subPath   = "nginx/public"
             }
@@ -51,9 +51,9 @@ spec {
       }
       volumes {
         new {
-          name = "af-storage"
+          name = "bl-storage"
           persistentVolumeClaim {
-            claimName = "af-pvc"
+            claimName = "bl-pvc"
           }
         }      
       }

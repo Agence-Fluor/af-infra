@@ -5,7 +5,11 @@
 /storage/tmp
 
 # Static files
-/storage/af/nginx/html
+#/storage/af/nginx/public
+/storage/af/nginx/logs
+
+#/storage/bl/nginx/public
+/storage/bl/nginx/logs
 
 # Secrets/config
 /Settings.pkl

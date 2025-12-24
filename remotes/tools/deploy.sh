@@ -24,7 +24,7 @@ REMOTE_COMMAND="$@"
 ssh "$REMOTE" "mkdir -p -- '$REMOTE_PATH'"
 
 # Run rsync: include everything except excluded
-RSYNC_CMD=( rsync -avz --delete ./ "${REMOTE}:${REMOTE_PATH%/}/" --exclude-from=".gitignore" )
+RSYNC_CMD=(rsync -avz --delete ./ "${REMOTE}:${REMOTE_PATH%/}/" --exclude-from=".gitignore" )
 
 echo "Running rsync..."
 "${RSYNC_CMD[@]}"

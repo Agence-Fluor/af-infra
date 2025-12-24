@@ -114,3 +114,14 @@ curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 ```bash
 curl -sfL https://get.k3s.io | sh -
 ```
+
+
+# tips
+
+force delete pv/pvc 
+
+kubectl delete pvc bl-pvc
+
+kubectl delete pv bl-pv
+
+kubectl patch pvc bl-pvc -p '{"metadata":{"finalizers":null}}'

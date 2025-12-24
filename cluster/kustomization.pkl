@@ -5,4 +5,5 @@ resources {
     "issuers/letsencrypt.yaml"
     "ingress-class.yaml"
     "af"
+    "bl"
 }

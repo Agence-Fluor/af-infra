@@ -26,7 +26,10 @@ helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
   --namespace ingress-nginx \
   --create-namespace \
   --version 4.10.1 \
-  --set controller.allowSnippetAnnotations=true
+  --set controller.allowSnippetAnnotations=true \
+  --set controller.hostNetwork=true \
+  --set controller.hostPort.enabled=true \
+  --set controller.service.type=ClusterIP
   
 
 #==========================================

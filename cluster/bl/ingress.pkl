@@ -23,7 +23,7 @@ metadata {
     """
     
     ["nginx.ingress.kubernetes.io/ssl-redirect"] = "true"
-    when (Settings.ingress["af"].tls.selfSigned)
+    when (Settings.ingress["bl"].tls.selfSigned)
     {
       ["cert-manager.io/cluster-issuer"] = "selfsigned-issuer"
     }
@@ -32,7 +32,6 @@ metadata {
     }
 
     ["nginx.ingress.kubernetes.io/from-to-www-redirect"] = "true"
-
   }
 }
 spec {
@@ -40,15 +39,15 @@ spec {
   tls {
     new {
       hosts {
-        Settings.ingress["af"].domain
-        "www." + Settings.ingress["af"].domain
+        Settings.ingress["bl"].domain
+        "www." + Settings.ingress["bl"].domain
       }
-      secretName = "af-cert"
+      secretName = "bl-cert"
     }
   }
   rules {
     new {
-      host = "www." + Settings.ingress["af"].domain
+      host = "www." + Settings.ingress["bl"].domain
       http {
         paths {
           
@@ -70,7 +69,7 @@ spec {
             pathType = "Prefix"
             backend {
               service {
-                name = "af-backend-service"
+                name = "bl-backend-service"
                 port {
                   number = 4000
                 }
