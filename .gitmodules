@@ -1,0 +1,6 @@
+[submodule "modules/af-website"]
+	path = modules/af-website
+	url = git@github.com:Agence-Fluor/af-website.git
+[submodule "modules/Blinder"]
+	path = modules/Blinder
+	url = git@github.com:Agence-Fluor/Blinder.git
