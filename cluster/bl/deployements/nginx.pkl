@@ -43,8 +43,13 @@ spec {
             }
             new {
               name      = "bl-storage"
-              mountPath = "/usr/share/nginx/html"
-              subPath   = "nginx/public"
+              mountPath = "/usr/share/nginx/maintenance"
+              subPath   = "nginx/maintenance"
+            }
+            new {
+              name      = "bl-storage"
+              mountPath = "/usr/share/nginx/app"
+              subPath   = "nginx/app"
             }
           }
         }

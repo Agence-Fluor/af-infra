@@ -5,7 +5,7 @@ server {
     error_page 404 /index.html;
     
     location / {
-        root   /usr/share/nginx/maintenance;
+        root   /usr/share/nginx/app;
         index  index.html index.htm;
     }
 }
