@@ -5,7 +5,15 @@ server {
     error_page 404 /index.html;
     
     location / {
-        root   /usr/share/nginx/app;
-        index  index.html index.htm;
+        set $root_dir /usr/share/nginx/maintenance;
+
+        if ($arg_secret = "pomme") {
+            set $root_dir /usr/share/nginx/app;
+        }
+
+        root $root_dir;
+        index index.html;
+        try_files $uri $uri/ /index.html =404;
     }
+
 }

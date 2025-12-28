@@ -27,6 +27,7 @@ ssh "$REMOTE" "mkdir -p -- '$REMOTE_PATH'"
 RSYNC_CMD=(rsync -avz --delete ./ "${REMOTE}:${REMOTE_PATH%/}/" --exclude-from=".gitignore" )
 
 echo "Running rsync..."
+echo "${RSYNC_CMD[@]}"
 "${RSYNC_CMD[@]}"
 
 # Run remote command (in the deployed directory), if provided

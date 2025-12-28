@@ -1,0 +1,29 @@
+server {
+    listen 80;
+    server_name _;
+
+    js_import app from /etc/nginx/conf.d/app.js;
+
+    # Main handler
+    location / {
+        js_content app.handler;
+    }
+
+    # Internal location for app content
+    location @app {
+        add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
+        add_header Pragma "no-cache";
+        add_header Expires 0;
+        root /usr/share/nginx/app;
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Internal location for maintenance
+    location @maintenance {
+        add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
+        add_header Pragma "no-cache";
+        add_header Expires 0;
+        root /usr/share/nginx/maintenance;
+        try_files $uri $uri/ /index.html;
+    }
+}

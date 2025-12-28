@@ -32,6 +32,11 @@ spec {
           volumeMounts {
             new {
               name      = "af-storage"
+              mountPath = "/etc/nginx/nginx.conf"
+              subPath   = "nginx/nginx.conf"
+            }
+            new {
+              name      = "af-storage"
               mountPath = "/etc/nginx/conf.d"
               subPath   = "nginx/config"
 
@@ -43,8 +48,13 @@ spec {
             }
             new {
               name      = "af-storage"
-              mountPath = "/usr/share/nginx/html"
-              subPath   = "nginx/public"
+              mountPath = "/usr/share/nginx/maintenance"
+              subPath   = "nginx/maintenance"
+            }
+            new {
+              name      = "af-storage"
+              mountPath = "/usr/share/nginx/app"
+              subPath   = "nginx/app"
             }
           }
         }

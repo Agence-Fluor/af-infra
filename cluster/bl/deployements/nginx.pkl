@@ -32,9 +32,13 @@ spec {
           volumeMounts {
             new {
               name      = "bl-storage"
+              mountPath = "/etc/nginx/nginx.conf"
+              subPath   = "nginx/nginx.conf"
+            }
+            new {
+              name      = "bl-storage"
               mountPath = "/etc/nginx/conf.d"
               subPath   = "nginx/config"
-
             }
             new {
               name      = "bl-storage"
